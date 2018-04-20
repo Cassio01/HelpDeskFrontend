@@ -1,5 +1,9 @@
-Tela de login do sistema Helpdesk
+Tela de login do sistema Helpdesk.
 ![login](https://user-images.githubusercontent.com/20090212/39055583-fcda836e-448a-11e8-87d4-611e50ef31b0.png)
+
+Tela do Admin do sistema.
+![tela_admin](https://user-images.githubusercontent.com/20090212/39059744-c71a09ba-4495-11e8-9ba1-97381581560b.png)
+
 
 # Helpdesk
 
