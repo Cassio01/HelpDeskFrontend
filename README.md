@@ -1,3 +1,6 @@
+Tela de login do sistema Helpdesk
+![login](https://user-images.githubusercontent.com/20090212/39055583-fcda836e-448a-11e8-87d4-611e50ef31b0.png)
+
 # Helpdesk
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
