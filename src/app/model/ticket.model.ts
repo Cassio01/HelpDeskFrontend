@@ -7,10 +7,11 @@ export class Ticket {
       public title: string,
       public status: string,
       public priority: string,
+      public description: string,
       public image: string,
       public user: User,
-      public assingUser: User,
-      public data: string,
+      public assignedUser: User,
+      public date: string,
       public changes: Array<string>
-  ){}
+  ) {}
 }
