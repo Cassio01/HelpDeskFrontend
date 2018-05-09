@@ -1,3 +1,25 @@
+Este sistema Frontend, está consumido a API do outro projeto Backend [HelpDesk](https://github.com/Cassio01/HelpDesk).
+
+A seguir tem algumas telas do sistema Helpdesk.
+
+Tela de login do sistema Helpdesk.
+![login](https://user-images.githubusercontent.com/20090212/39132474-50b785fe-46e8-11e8-9e1f-075240db7745.png)
+
+Tela do Admin do sistema.
+![admin_home](https://user-images.githubusercontent.com/20090212/39132620-a47bf594-46e8-11e8-87ae-7bf9eafee31e.png)
+
+Tela para cadastrar Admin, Cliente ou Técnico.
+![admin_cadastro](https://user-images.githubusercontent.com/20090212/39132641-b88603b8-46e8-11e8-9d39-339f97cf76ca.png)
+
+Tela para listar todos os cadastrados
+![admin_lista](https://user-images.githubusercontent.com/20090212/39132738-f7965e68-46e8-11e8-88f7-c5e36be49f84.png)
+
+Tela para mostrar o resumo das atividades do cliente e técnico, esta tela é exibida em todos os perfis.
+![admin_summary](https://user-images.githubusercontent.com/20090212/39132777-0c9f93b0-46e9-11e8-87ce-8434efdb4e4f.png)
+
+
+
+
 # Helpdesk
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
