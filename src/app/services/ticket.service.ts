@@ -8,35 +8,35 @@ export class TicketService {
 
   constructor(private http: HttpClient) { }
 
-    createOrUpdate(ticket: Ticket){
-      if (ticket.id != null && ticket.id != '') {
+    createOrUpdate(ticket: Ticket) {
+      if (ticket.id != null && ticket.id !== '') {
         return this.http.put(`${HELP_DESK_API}/api/ticket`, ticket);
       } else {
-        ticket.id != null;
+        ticket.id = null;
         ticket.status = 'New';
         return this.http.post(`${HELP_DESK_API}/api/ticket`, ticket);
       }
     }
-    finAll(page: number, count: number){
+    findAll(page: number, count: number) {
       return this.http.get(`${HELP_DESK_API}/api/ticket/${page}/${count}`);
     }
-    findById(id: string){
+    findById(id: string) {
       return this.http.get(`${HELP_DESK_API}/api/ticket/${id}`);
     }
-    delete(id: string){
+    delete(id: string ) {
       return this.http.delete(`${HELP_DESK_API}/api/ticket/${id}`);
     }
-    findByParams(page: number, count: number, assingedToMe: boolean, t: Ticket){
+    findByParams(page: number, count: number, assingedToMe: boolean, t: Ticket) {
       t.number = t.number == null ? 0 : t.number;
-      t.title = t.title == '' ? 'uniformed' : t.title;
-      t.status = t.status == '' ? 'uniformed' : t.status;
-      t.priority = t.priority == '' ? 'uniformed' : t.priority;
+      t.title = t.title === '' ? 'uninformed' : t.title;
+      t.status = t.status === '' ? 'uninformed' : t.status;
+      t.priority = t.priority === '' ? 'uninformed' : t.priority;
       return this.http.get(`${HELP_DESK_API}/api/ticket/${page}/${count}/${t.number}/${t.title}/${t.status}/${t.priority}/${assingedToMe}`);
     }
-    changeStatus(status: string, ticket: Ticket){
+    changeStatus(status: string, ticket: Ticket) {
       return this.http.put(`${HELP_DESK_API}/api/ticket/${ticket.id}/${status}`, ticket);
     }
-    summary(){
+    summary() {
       return this.http.get(`${HELP_DESK_API}/api/ticket/summary`);
     }
 }
