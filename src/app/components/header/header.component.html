@@ -1,6 +1,6 @@
 <header class="main-header">
 
-  <a href="index2.html" class="logo">
+  <a [routerLink]="[ '/']" class="logo">
     <span class="logo-mini"><b>Help</b></span>
     <span class="logo-lg"><b>Help Desk</b></span>
   </a>
@@ -10,7 +10,8 @@
       <span class="sr-only">Toggle navigation</span>
     </a>
     <div class="navbar-custom-menu">
-        <p style="color: white">devfull9@gmail.com - ADMIN<button>Lougout</button></p>
+        <p style="color: white">{{ shared.user.email }} - {{ shared.user.profile }} |
+          <button class="btn btn-link" (click)="signOut()"><span style="color: white">Lougout</span></button></p>
     </div>
 
   </nav>

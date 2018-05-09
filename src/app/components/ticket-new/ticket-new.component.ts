@@ -20,6 +20,7 @@ export class TicketNewComponent implements OnInit {
   shared = SharedService;
   message: {};
   classCss: {};
+  title: string = 'Ticket new';
   constructor(
     private ticketService: TicketService,
     private route: ActivatedRoute

@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule, Title} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
@@ -16,6 +16,13 @@ import {FormsModule, NgModel} from '@angular/forms';
 import {AuthInterceptor} from './components/security/auth.interceptor';
 import {AuthGuard} from './components/security/auth.guard';
 import { UserNewComponent } from './components/user-new/user-new.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import {DialogService} from './dialog.service';
+import { TicketNewComponent } from './components/ticket-new/ticket-new.component';
+import {TicketService} from './services/ticket.service';
+import { TicketListComponent } from './components/ticket-list/ticket-list.component';
+import { TicketDetailComponent } from './components/ticket-detail/ticket-detail.component';
+import { SummaryComponent } from './components/summary/summary.component';
 
 
 @NgModule({
@@ -26,7 +33,12 @@ import { UserNewComponent } from './components/user-new/user-new.component';
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    UserNewComponent
+    UserNewComponent,
+    UserListComponent,
+    TicketNewComponent,
+    TicketListComponent,
+    TicketDetailComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +50,9 @@ import { UserNewComponent } from './components/user-new/user-new.component';
     UserService,
     SharedService,
     AuthGuard,
+    DialogService,
+    TicketService,
+    Title,
     {
       provide: HTTP_INTERCEPTORS,
       useClass:  AuthInterceptor,

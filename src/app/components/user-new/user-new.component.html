@@ -1,7 +1,7 @@
 <div class="col-md-6" style="margin-left: 0%">
   <div class="box box-info">
     <div class="box-header with-border">
-      <h3 class="box-title">New user</h3>
+      <h3 class="box-title">{{ (user.id != '') ? 'Edit user':'New user'}}</h3>
     </div>
     <form class="form-horizontal" #form="ngForm" (ngSubmit)="register()">
       <div [ngClass]="classCss" role="alert" *ngIf="message">
@@ -63,7 +63,7 @@
       </div>
       </div>
       <div class="box-footer">
-        <button type="submit" [disabled]="!form.valid" class="btn btn-info pull-right">Sign in</button>
+        <button type="submit" [disabled]="!form.valid" class="btn btn-info pull-right">Submit</button>
       </div>
 
     </form>

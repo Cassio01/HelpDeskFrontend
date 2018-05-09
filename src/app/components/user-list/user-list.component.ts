@@ -32,10 +32,10 @@ export class UserListComponent implements OnInit {
     this.findAll(this.page, this.count);
   }
 
-  findAll(page:number, count: number){
+  findAll(page: number, count: number) {
     this.userService.findAll(page, count).subscribe((responseApi: ResponseApi) => {
-      this.listUser = responseApi['data']['content'];
-      this.pages = new Array(responseApi['data']['totalPages']);
+      this.listUser = responseApi['']['content'];
+      this.pages = new Array(responseApi['']['totalPages']);
     }, err => {
       this.showMessage({
         type: 'error',
@@ -45,7 +45,7 @@ export class UserListComponent implements OnInit {
   }
 
   edit(id: string) {
-    this.router.navigate(['/user-new',id]);
+    this.router.navigate(['/user-new', id]);
   }
 
   delete(id: string) {

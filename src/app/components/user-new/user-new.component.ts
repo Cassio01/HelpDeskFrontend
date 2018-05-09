@@ -14,12 +14,12 @@ import {ResponseApi} from '../../model/response-api';
 export class UserNewComponent implements OnInit {
 
   @ViewChild('form')
-  form: NgForm
+  form: NgForm;
 
-  user = new User('','','','');
+  user = new User( '', '', '' , '');
   shared: SharedService;
   message: {};
-  classCss: {}
+  classCss: {};
   constructor(
     private userService: UserService,
     private route: ActivatedRoute
@@ -28,13 +28,13 @@ export class UserNewComponent implements OnInit {
   }
 
   ngOnInit() {
-    let id: string = this.route.snapshot.params['id'];
-    if(id != undefined) {
+    const id: string = this.route.snapshot.params['id'];
+    if (id !== undefined) {
       this.findById(id);
     }
   }
 
-  findById(id: string){
+  findById(id: string) {
     this.userService.findById(id).subscribe((responseApi: ResponseApi) => {
       this.user = responseApi.data;
       this.user.password = '';
@@ -46,11 +46,11 @@ export class UserNewComponent implements OnInit {
     });
   }
 
-  register(){
+  register() {
     this.message = {};
     this.userService.createOrUpdate(this.user).subscribe((responseApi: ResponseApi) => {
-      this.user = new User('','','','');
-      let userRet: User = responseApi.data;
+      this.user = new User('', '', '', '');
+      const userRet: User = responseApi.data;
       this.form.resetForm();
       this.showMessage({ type: 'sucesso', text: `${userRet.email} registrado com sucesso!` });
     }, err => {
@@ -65,13 +65,13 @@ export class UserNewComponent implements OnInit {
     this.message = message;
     this.buildClass(message.type);
     setTimeout(() => {
-      this.message= undefined;
+      this.message = undefined;
     }, 3000);
   }
   private buildClass(type: string): void {
     this.classCss = {
       'alert': true
-    }
+    };
     this.classCss['alert-' + type] = true;
   }
 }

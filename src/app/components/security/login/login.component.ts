@@ -4,7 +4,6 @@ import {SharedService} from '../../../services/shared.service';
 import {UserService} from '../../../services/user.service';
 import {Router} from '@angular/router';
 import {CurrentUser} from '../../../model/current-user.model';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +11,7 @@ import {CurrentUser} from '../../../model/current-user.model';
 })
 export class LoginComponent implements OnInit {
 
-  user = new User('','','', '');
+  user = new User('', '', '', '');
   shared: SharedService;
   message: string;
   constructor(
@@ -25,7 +24,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(){
+  login() {
     this.message = '';
     this.userService.login(this.user).subscribe((userAuthentication: CurrentUser) => {
       this.shared.token = userAuthentication.token;
@@ -41,12 +40,10 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  cancelLogin(){
+  cancelLogin() {
     this.message = '';
-    this.user = new User('','','','');
+    this.user = new User('', '', '', '');
     window.location.href = '/login';
     window.location.reload();
   }
-
-
 }

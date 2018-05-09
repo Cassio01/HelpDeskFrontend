@@ -1,7 +1,7 @@
 <div class="col-md-6" style="margin-left: 0%">
   <div class="box box-info">
     <div class="box-header with-border">
-      <h3 class="box-title">New ticket</h3>
+      <h3 class="box-title">{{ ticket.id !== '' ? 'Edit ticket':'New ticket'}}</h3>
     </div>
     <form class="form-horizontal" #form="ngForm" (ngSubmit)="register()">
       <div [ngClass]="classCss" role="alert" *ngIf="message">
